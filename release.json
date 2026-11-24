@@ -1,0 +1,44 @@
+{
+    "files": [
+        {
+            "path": "Build/498ec25e02c02a8624ff572e3d657a8d.framework.js.unityweb",
+            "bytes": 89711,
+            "sha256": "01c0a260279ad82104cdaac1dac34b79a5942df0032e6a4753750c56b0f0d023"
+        },
+        {
+            "path": "Build/b4824d8cf13a26530fd91c9ceb3f9618.loader.js",
+            "bytes": 47867,
+            "sha256": "60cc6468aac7c3afe49902bf70334b8d9a6f7a57be8b33fdb079b2fffeb08f67"
+        },
+        {
+            "path": "Build/d70974784ecf7638756213bb149add30.wasm.unityweb",
+            "bytes": 13015016,
+            "sha256": "9502a857e574ae9524e3ae0ebbcbeb4de295ea4921e099c8f7c1308a608f7ccd"
+        },
+        {
+            "path": "Build/fb7c374631021de664e6311b747163ed.data.unityweb",
+            "bytes": 12730170,
+            "sha256": "5448b7e7e4a023deafd031ecf231a7ab4c8b4ada7f5dfc7a50221bffb75de212"
+        },
+        {
+            "path": "asset-credits.md",
+            "bytes": 986,
+            "sha256": "1c391133d3c28793f1816350a152c2402c3e61ec84982db7c8ad6eb28556f748"
+        },
+        {
+            "path": "font-license.txt",
+            "bytes": 4400,
+            "sha256": "8b7141c03fa4f8d44e6345d5d4931709290f0f67875e452e95ac1fd3a027802e"
+        },
+        {
+            "path": "index.html",
+            "bytes": 5575,
+            "sha256": "8910345b0e0ce00d6c16fce0abccacfdd2efb221b7d83daaa5b7aac308e4a7e6"
+        },
+        {
+            "path": "onepager.html",
+            "bytes": 3709,
+            "sha256": "1fff3335ef5af93a3a6bfb186731f4f29311ac8a16c3488e79b6a0ab58bea945"
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DRIFT LOOP</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Cpath d='M10 40c10 10 34 10 44-6' stroke='%23ff8a24' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='26' r='7' fill='%23f6f3ec'/%3E%3C/svg%3E">
+  <meta name="description" content="DRIFT LOOP: drift to wind a hidden spring, boost on the straights and beat your own ghost on a desk-top circuit.">
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0d12; }
+    body { color: #f6f3ec; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    #unity-canvas { display: block; width: 100%; height: 100%; outline: none; background: #0b0d12; }
+    #status { position: fixed; inset: 0; display: grid; place-items: center; padding: 20px;
+      background: radial-gradient(ellipse at 50% 60%, #2a1c12 0%, #0b0d12 70%); }
+    .card { width: min(28rem, 100%); padding: 1.6rem 1.7rem; background: rgba(8, 10, 14, .72);
+      border: 1px solid rgba(255, 255, 255, .22); border-radius: 18px; box-shadow: 0 18px 48px rgba(0, 0, 0, .45); }
+    h1 { margin: 0 0 .2rem; font-size: 2rem; font-style: italic; font-weight: 800; letter-spacing: .01em; }
+    h1 span { border-bottom: 3px solid #ff8a24; }
+    p { margin: .6rem 0; color: #c9ccd4; }
+    .bar { height: 10px; margin-top: 1rem; background: rgba(255, 255, 255, .12); border-radius: 6px; overflow: hidden; }
+    .fill { width: 0; height: 100%; background: linear-gradient(90deg, #ffae32, #ffd27a); box-shadow: 0 0 12px #ff9a1f; transition: width .2s; }
+    a { color: #ffc469; }
+    code { color: #fff3d3; }
+    details { margin-top: .8rem; color: #c9ccd4; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <canvas id="unity-canvas" tabindex="-1" aria-label="DRIFT LOOP"></canvas>
+  <div id="status">
+    <section class="card" aria-labelledby="title">
+      <h1 id="title"><span>DRIFT</span> LOOP</h1>
+      <p id="message" role="status">Loading the circuit…</p>
+      <div class="bar" id="bar" role="progressbar" aria-label="Loading game" aria-valuemin="0" aria-valuemax="100"><div class="fill" id="fill"></div></div>
+      <div id="local-help" hidden>
+        <p>This page was opened as a file. Run <code>PLAY-WEB.cmd</code> from the project folder and keep its window open.</p>
+        <a href="http://127.0.0.1:8765/">Open the local game</a>
+      </div>
+      <details id="diagnostics" hidden>
+        <summary>Details</summary>
+        <pre id="error"></pre>
+      </details>
+      <noscript><p>DRIFT LOOP needs JavaScript to run.</p></noscript>
+    </section>
+  </div>
+  <script>
+    const canvas = document.getElementById("unity-canvas");
+    const statusPanel = document.getElementById("status");
+    const message = document.getElementById("message");
+    const bar = document.getElementById("bar");
+    const fill = document.getElementById("fill");
+    let failed = false;
+    const fail = (text, error) => {
+      failed = true;
+      if (!statusPanel.isConnected) document.body.appendChild(statusPanel);
+      message.textContent = text;
+      bar.hidden = true;
+      document.getElementById("diagnostics").hidden = false;
+      document.getElementById("error").textContent = (error && error.message) || String(error);
+    };
+    if (location.protocol === "file:") {
+      message.textContent = "The game needs to run from a web address.";
+      bar.hidden = true;
+      document.getElementById("local-help").hidden = false;
+    } else {
+      const buildUrl = "Build";
+      const config = {
+        dataUrl: buildUrl + "/fb7c374631021de664e6311b747163ed.data.unityweb",
+        frameworkUrl: buildUrl + "/498ec25e02c02a8624ff572e3d657a8d.framework.js.unityweb",
+        codeUrl: buildUrl + "/d70974784ecf7638756213bb149add30.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DRIFT LOOP",
+        productName: "DRIFT LOOP",
+        productVersion: "0.1.0",
+        showBanner: (text, type) => { if (type === "error") fail("The game could not start. Please refresh the page.", text); },
+      };
+      const loader = document.createElement("script");
+      loader.src = buildUrl + "/b4824d8cf13a26530fd91c9ceb3f9618.loader.js";
+      loader.onerror = () => fail("The game files could not be downloaded. Please refresh the page.", loader.src);
+      loader.onload = async () => {
+        try {
+          if (typeof createUnityInstance !== "function") throw new Error("Invalid Unity loader.");
+          await createUnityInstance(canvas, config, (progress) => {
+            if (failed) return;
+            const percent = Math.max(0, Math.min(100, Math.round(progress * 100)));
+            fill.style.width = percent + "%";
+            bar.setAttribute("aria-valuenow", String(percent));
+            message.textContent = progress < 0.9 ? "Loading the circuit…" : "Warming up the lamps…";
+          });
+          if (!failed) {
+            statusPanel.remove();
+            canvas.focus();
+          }
+        } catch (error) {
+          fail("This browser could not start the game. Try a current Chrome, Edge or Firefox.", error);
+        }
+      };
+      canvas.addEventListener("pointerdown", () => canvas.focus());
+      document.body.appendChild(loader);
+    }
+  </script>
+</body>
+</html>

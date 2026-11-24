@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DRIFT LOOP — ванпейджер</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #15161a; color: #f3ecdf; font: 16px/1.48 system-ui, sans-serif; }
+    main { width: min(100% - 2rem, 740px); margin: 2.5rem auto; }
+    h1 { margin: 0; font-size: clamp(3rem, 10vw, 5.8rem); letter-spacing: -.07em; line-height: .9; font-style: italic; }
+    h2 { margin: 1.35rem 0 .35rem; font-size: 1.16rem; }
+    p { margin: 0 0 .8rem; }
+    .lead { margin: 1rem 0; font-size: 1.22rem; max-width: 42ch; color: #ffc274; }
+    a { color: #ffc274; text-underline-offset: .2em; }
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.75rem; border-top: 1px solid #514638; padding-top: .95rem; }
+    @media print {
+      body { background: #fff; color: #191919; }
+      main { margin: 0 auto; width: 100%; }
+      h1 { font-size: 44pt; }
+      .lead, a { color: #924626; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>DRIFT LOOP</h1>
+    <p class="lead">Одиночные гонки на коллекционной модели. Реши, сколько времени отдать в заносе, чтобы отыграть его на прямой.</p>
+
+    <h2>Что делает игрок</h2>
+    <p>Проходит настольную трассу на время, заводит скрытую пружину дрифтом и отдельным нажатием выпускает заряд для ускорения. Заряд ограничен. Широкий занос занимает больше времени, поэтому важно выбрать поворот и подходящую прямую.</p>
+
+    <h2>Чем игра выделяется</h2>
+    <p>Соперник — призрак собственного рекорда. Разница на контрольных точках и сравнение траекторий показывают, где выиграл короткий путь, а где окупился разгон. После финиша можно сразу проверить другую тактику.</p>
+
+    <h2>Что есть в прототипе</h2>
+    <p>Шесть трасс, 18 испытаний по три круга и два облика одной машины с одинаковым управлением. Заезды на время знакомят с маршрутом, задания на заряд меняют момент ускорения, узкие ворота заставляют искать другую траекторию.</p>
+
+    <h2>Как может вырасти игра</h2>
+    <p>Аудитория — любители коротких аркадных заездов и личных рекордов. Ориентир — компактная одиночная игра для Steam. Предварительный план на шесть месяцев опирается на готовое управление, повторно используемые детали окружения и самостоятельную кампанию.</p>
+
+    <p>Прототип работает на Unity 6.3 LTS, URP и WebGL. AI помог в разработке и проверках, а художественное направление и правила гонки заданы автором.</p>
+
+    <nav aria-label="Ссылки">
+      <a href="./">Открыть игру</a>
+      <a href="./asset-credits.md">Материалы и лицензии</a>
+    </nav>
+  </main>
+</body>
+</html>

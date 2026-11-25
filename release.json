@@ -1,24 +1,24 @@
 {
     "files": [
         {
-            "path": "Build/498ec25e02c02a8624ff572e3d657a8d.framework.js.unityweb",
-            "bytes": 89711,
-            "sha256": "01c0a260279ad82104cdaac1dac34b79a5942df0032e6a4753750c56b0f0d023"
+            "path": "Build/38fa13ea7126d75ef5866a67afe069ae.wasm.unityweb",
+            "bytes": 13023225,
+            "sha256": "e8977fc147a3620cf801abc68f2f79d14d8b15ca51911bfafe1417f3ec7e23ec"
         },
         {
-            "path": "Build/b4824d8cf13a26530fd91c9ceb3f9618.loader.js",
+            "path": "Build/77d09816e3f1809e231e9f6aff9992a6.framework.js.unityweb",
+            "bytes": 89699,
+            "sha256": "43f9d26bc1c5569053f28c1111e474dec9281b633ef41f100c53f1aad528b689"
+        },
+        {
+            "path": "Build/a4bb0ff1c696128af2fed480341e1769.data.unityweb",
+            "bytes": 12732297,
+            "sha256": "77ecbaeebd268b28789d5aa3342b0cf445f83a7f018bc78107f3202ef30ea920"
+        },
+        {
+            "path": "Build/ada276042207a0eef60136da0202d884.loader.js",
             "bytes": 47867,
-            "sha256": "60cc6468aac7c3afe49902bf70334b8d9a6f7a57be8b33fdb079b2fffeb08f67"
-        },
-        {
-            "path": "Build/d70974784ecf7638756213bb149add30.wasm.unityweb",
-            "bytes": 13015016,
-            "sha256": "9502a857e574ae9524e3ae0ebbcbeb4de295ea4921e099c8f7c1308a608f7ccd"
-        },
-        {
-            "path": "Build/fb7c374631021de664e6311b747163ed.data.unityweb",
-            "bytes": 12730170,
-            "sha256": "5448b7e7e4a023deafd031ecf231a7ab4c8b4ada7f5dfc7a50221bffb75de212"
+            "sha256": "c59a2237582e4bb5d7470b887022819d6aa064b7fe464fbc9f6edea4a6818fb3"
         },
         {
             "path": "asset-credits.md",
@@ -33,12 +33,12 @@
         {
             "path": "index.html",
             "bytes": 5575,
-            "sha256": "8910345b0e0ce00d6c16fce0abccacfdd2efb221b7d83daaa5b7aac308e4a7e6"
+            "sha256": "277296b0d9512df2527dea4959fd66a615f8981846cceb7e8fc48139bf0de1ab"
         },
         {
             "path": "onepager.html",
-            "bytes": 3709,
-            "sha256": "1fff3335ef5af93a3a6bfb186731f4f29311ac8a16c3488e79b6a0ab58bea945"
+            "bytes": 3957,
+            "sha256": "b6115cf85cbd9a5a624922028f2b68da4ae8f5e517d7a5489425c59aa0f07d06"
         }
     ]
 }

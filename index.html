@@ -66,9 +66,9 @@
     } else {
       const buildUrl = "Build";
       const config = {
-        dataUrl: buildUrl + "/fb7c374631021de664e6311b747163ed.data.unityweb",
-        frameworkUrl: buildUrl + "/498ec25e02c02a8624ff572e3d657a8d.framework.js.unityweb",
-        codeUrl: buildUrl + "/d70974784ecf7638756213bb149add30.wasm.unityweb",
+        dataUrl: buildUrl + "/a4bb0ff1c696128af2fed480341e1769.data.unityweb",
+        frameworkUrl: buildUrl + "/77d09816e3f1809e231e9f6aff9992a6.framework.js.unityweb",
+        codeUrl: buildUrl + "/38fa13ea7126d75ef5866a67afe069ae.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DRIFT LOOP",
         productName: "DRIFT LOOP",
@@ -76,7 +76,7 @@
         showBanner: (text, type) => { if (type === "error") fail("The game could not start. Please refresh the page.", text); },
       };
       const loader = document.createElement("script");
-      loader.src = buildUrl + "/b4824d8cf13a26530fd91c9ceb3f9618.loader.js";
+      loader.src = buildUrl + "/ada276042207a0eef60136da0202d884.loader.js";
       loader.onerror = () => fail("The game files could not be downloaded. Please refresh the page.", loader.src);
       loader.onload = async () => {
         try {
